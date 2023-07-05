@@ -1,0 +1,119 @@
+footer {
+  .footer-icon-block .btn-icon {
+    margin-right: 15px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .btn-icon .bg-icon.margin {
+    margin-top: 14px;
+  }
+  .footer {
+    &__food{
+        li{
+            margin-bottom: 35px;
+        }
+    }
+    &__about{
+        li{
+            margin-bottom: 35px;
+            a{
+                color: #6d6d6d;
+            }
+        }
+    }
+    &__location {
+      display: flex;
+      span {
+        color: #2d2c2c;
+      }
+    }
+  }
+}
+
+.spec-marg {
+  margin-bottom: 20px;
+}
+
+.footer-icon-block {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+}
+.footer-icon-block .btn-icon {
+  margin-right: 15px;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.footer-icon-block .btn-icon .bg-icon {
+  margin-top: 12px;
+}
+.btn-icon .bg-icon {
+  position: absolute;
+  margin-top: 2px;
+  margin-left: -30px;
+}
+.btn-icon .bg-icon.margin {
+  margin-top: 14px;
+}
+.footer {
+  &__hours {
+    .btn-icon .bg-icon.margin {
+      margin-top: 14px;
+      margin-left: -31px;
+    }
+  }
+  &__social {
+    .btn-icon .bg-icon.margin {
+      margin-top: 16px !important;
+      margin-left: -27px;
+    }
+  }
+}
+.footer__social .footer-icon-block .btn-icon .bg-icon {
+  margin-top: 16px;
+  margin-left: -27px;
+}
+.btn-icon.facebook {
+  margin-right: 5px;
+}
+.footer__social .footer-icon-block .btn-icon.insta .bg-icon {
+  margin-top: 15px;
+  margin-left: -31px;
+}
+.footer-info-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer-icon-block.right .footer-info {
+  width: auto;
+  margin-right: 20px;
+}
+.footer-icon-block.right {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer-info-center .text b {
+    font-weight: 500;
+}
+.medium {
+    font-weight: 500;
+}
+
+a {
+  color: #2d2c2c;
+}

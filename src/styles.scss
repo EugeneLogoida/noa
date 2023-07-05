@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,20 +19,79 @@ $noa-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$noa-theme: mat.define-light-theme((
-  color: (
-    primary: $noa-primary,
-    accent: $noa-accent,
-    warn: $noa-warn,
+$noa-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $noa-primary,
+      accent: $noa-accent,
+      warn: $noa-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($noa-theme);
+@import url("app/shared/styles/_variables.scss");
 
+@font-face {
+  font-family: "Cera Round Pro";
+  src: url(assets/fonts/CeraRoundPRO/CeraRoundPro-Regular.otf);
+}
 /* You can add global styles to this file, and also import other style files */
+// @import url('');
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Cera Round Pro", sans-serif;
+  height: auto;
+  overflow: visible;
+  background-image: url(https://noa.ua/wp-content/themes/tomatina/img/bg-w-o3.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  font-size: 15px;
+  color: #6d6d6d;
+}
+.container {
+  width: 100%;
+  max-width: 1840px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+p {
+  font-size: 16px;
+  color: #6d6d6d;
+}
+h2{
+  font-weight: 700;
+  font-size: 38px;
+  color: #2D2C2C;
+}
+h5 {
+  font-size: 16px;
+  color: #2D2C2C;
+}
+li{
+  list-style: none;
+}
+
+
+
+@media (min-width: 1200px){
+
+  .container {
+      width: 100%;
+      max-width: 1840px;
+      padding-left: 60px;
+      padding-right: 60px;
+  }
+}

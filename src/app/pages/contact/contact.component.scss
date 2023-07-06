@@ -1,0 +1,130 @@
+.spacer-md {
+  height: 60px;
+}
+h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  span{
+    color: #2d7d7d;
+  }
+}
+.info {
+  display: flex;
+  padding: 0 50px;
+  margin-bottom: 80px;
+  h5 {
+    font-weight: 500;
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+  .contact-grey {
+    padding: 20px 30px;
+    background: #f5f5f5;
+    border-radius: 6px;
+  }
+  .contact-line {
+    display: flex;
+    margin-bottom: 10px;
+    p {
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+  }
+  .contact-icon {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
+    width: 30px;
+    text-align: center;
+  }
+  .main-color {
+    color: #2c2d2d;
+  }
+  .phone {
+    position: relative;
+    color: #2d7d7d;
+  }
+  & > div {
+    margin-top: 20px;
+  }
+}
+
+.pay-map-block {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.contact-map .map-block {
+  height: 560px;
+}
+.gm-style {
+  font: 400 11px Roboto, Arial, sans-serif;
+  text-decoration: none;
+}
+.gm-style-moc {
+  background-color: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  text-align: center;
+  -webkit-transition: opacity ease-in-out;
+  -o-transition: opacity ease-in-out;
+  transition: opacity ease-in-out;
+}
+
+textarea {
+  display: block;
+  resize: none;
+  overflow: auto;
+}
+textarea.input {
+  height: 105px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  line-height: 18px;
+}
+.input {
+  font-size: 16px;
+  height: 54px;
+  color: #2d2c2c;
+  border: 1px solid #ececec;
+  background-color: #fff;
+  line-height: 51px;
+  padding: 0 20px;
+  border-radius: 3px;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.input:focus {
+  outline: none;
+  border: 1px solid #2d7d7d;
+}
+.write-us {
+  h4 {
+    font-size: 26px;
+    line-height: 1.2em;
+    font-weight: 700;
+    color: #2c2d2d;
+    margin-bottom: 30px;
+  }
+}
+
+.send-btn {
+    color: #FFF;
+    background: #2d7d7d;
+    border: 2px solid #2d7d7d;
+    border-radius: 6px;
+    padding: 18px 30px;
+    width: 50%;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .15em;
+    transition: 0.3s;
+}
+.send-btn:hover {
+     background: #FFF;
+     color: #2d7d7d;
+}

@@ -1,1 +1,105 @@
-<p>admin-products works!</p>
+<!-- <div class="container"> -->
+<div class="contaion">
+    <div class="row">
+        <div class="col-4">
+            <div class="categoriesForm">
+                <form [formGroup]="productsForm" (ngSubmit)="addProduct()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input formControlName="name" name="name" type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="path" class="form-label">Path</label>
+                        <input formControlName="path" name="path" type="text" class="form-control" id="path">
+                        <div class="invalid-feedback">Path is required</div>
+                    </div>
+                    <div class="col mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select formControlName="category" class="form-select">
+                            <option [ngValue]="category" *ngFor="let category of adminCategories">{{ category.name }}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">description</label>
+                        <input formControlName="description" name="description" type="text" class="form-control"
+                            id="description">
+                        <div class="invalid-feedback">Path is required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="allergens" class="form-label">allergens</label>
+                        <input formControlName="allergens" name="allergens" type="text" class="form-control"
+                            id="allergens">
+                        <div class="invalid-feedback">Path is required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="weight" class="form-label">weight</label>
+                        <input formControlName="weight" name="weight" type="text" class="form-control" id="weight">
+                        <div class="invalid-feedback">Path is required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">price</label>
+                        <input formControlName="price" name="price" type="text" class="form-control" id="price">
+                        <div class="invalid-feedback">Path is required</div>
+                    </div>
+                    
+                    <ng-container *ngIf="!isUploaded">
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Default file input example</label>
+                            <input class="form-control" type="file" id="formFile" (change)="upload($event)">
+                        </div>
+
+                    </ng-container>
+                    <ng-container *ngIf="isUploaded">
+                        <img [src]="valueByControl('imagePath')" alt="" width="100px">
+                        <button type="button" class="btn btn-danger" (click)="deleteImage()">delete</button>
+                    </ng-container>
+                    <button [disabled]="productsForm.invalid" type="submit" class="btn btn-success w-100">
+                        {{ editStatus ? 'Save' : 'Add' }}
+
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="col-8">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Path</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">description</th>
+                        <th scope="col">allergens</th>
+                        <th scope="col">weight</th>
+                        <th scope="col">price</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of adminProducts">
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.path }}</td>
+                        <td>
+                            <img [src]="product.imagePath" alt="" height="50px">
+                        </td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.allergens }}</td>
+                        <td>{{ product.weight }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>
+                            <button (click)="editProduct(product)" type="button"
+                                class="btn btn-secondary me-2">Edit</button>
+                            <button [disabled]="editStatus" (click)="deleteProduct(product)" type="button"
+                                class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<!-- </div> -->

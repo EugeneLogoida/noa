@@ -44,3 +44,7 @@ Thumbs.db
 
 # My Files
 editPlans.txt
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json

@@ -1,1 +1,17 @@
-<p>admin works!</p>
+<div style="height: 80px;"></div>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-2">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action" aria-current="true" [routerLink]="[ 'product' ]" routerLinkActive="active">
+                  Продукти
+                </a>
+                <a href="#" class="list-group-item list-group-item-action" [routerLink]="[ 'category' ]" routerLinkActive="active">Категорії</a>
+              </div>
+        </div>
+        <div class="col-10">
+            <router-outlet></router-outlet>
+        </div>
+        
+    </div>

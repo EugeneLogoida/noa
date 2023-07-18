@@ -1,1 +1,55 @@
-<p>products works!</p>
+<div class="container">
+    <div style="height: 60px;">
+    </div>
+    <div class="row">
+        <div class="categories__menu">
+            <ul class="categories__list">
+                <ng-container *ngIf="mainMenuBool">
+                    <li *ngFor="let category of categoriesMainList">
+                        <a [routerLink]="['/product/'+category.path]" routerLinkActive="router-active"  aria-current="page">{{ category.name }}</a>
+                    </li>
+                </ng-container>
+                
+                <ng-container *ngIf="!mainMenuBool">
+                    <li *ngFor="let category of categoriesThaiList">
+                        <a [routerLink]="['/product/'+category.path]" routerLinkActive="router-active"  aria-current="page">{{ category.name }}</a>
+                    </li>
+                </ng-container>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="d-flex flex-wrap">
+            <ng-container *ngFor="let product of currList">
+                <div class="card col-sm-6 col-lg-4 col-xl-3 ">
+                    <img [src]="product.imagePath" class="card-img-top" width="350" height="350"
+                        [routerLink]="[ '/product/'+product.category.path, product.path ]">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" [routerLink]="[ '/product/'+product.category.path, product.path ]">{{
+                                product.name }}</h5>
+                            <h5 class="card-price">{{ product.price }}</h5>
+
+                        </div>
+
+                        <p class="card-text">{{ product.description }}</p>
+                        <div class="d-flex justify-content-between card-inputs">
+                            <div class="thumb-input-number">
+                                <button type="button" class="decrement"
+                                    (click)="quantityChange(product, false)">-</button>
+                                <input [value]="product.count" readonly="" class="product-qty" tabindex="-1" max="999">
+                                <button type="button" class="increment"
+                                    (click)="quantityChange(product, true)">+</button>
+                            </div>
+                            <a href="#" class="card-inputs_btn">Замовити</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+
+
+        </div>
+    </div>
+</div>

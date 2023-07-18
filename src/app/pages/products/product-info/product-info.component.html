@@ -1,1 +1,43 @@
-<p>product-info works!</p>
+<div class="container" *ngIf="currentProduct">
+    <nav style="--bs-breadcrumb-divider: '';" class="breadcrumb" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item q"><a href="#">Noa</a></li>
+            <li class="breadcrumb-item q"><a [routerLink]="[ '/product/'+currentProduct.category.path ]">{{ currentProduct.category.name }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ currentProduct.name }}</li>
+        </ol>
+    </nav>
+    <div class="row">
+
+        <div class="left col-xl-4 offset-xl-2 col-lt-6 offset-lt-0 col-lg-5">
+            <div style="width: 500px;">
+                <img [src]="currentProduct.imagePath" alt="" class="inside-img">
+            </div>
+        </div>
+        <ng-container *ngIf="currentProduct">
+            <div class="right col-xl-5 col-lt-6 col-lg-7">
+                <div class="product__weight">{{ currentProduct.weight }}</div>
+                <div class="product__title">{{ currentProduct.name }}</div>
+                <div class="product__description">{{ currentProduct.description }}</div>
+                <div class="product__allergens">*Містить алергени: {{ currentProduct.allergens }}</div>
+                <hr>
+                <div class="product__count">
+                    <div class="d-flex card-inputs">
+                        <div class="thumb-input-number">
+                            <button type="button" class="decrement"
+                                (click)="quantityChange(currentProduct, false)">-</button>
+                            <input [value]="currentProduct.count" readonly="" class="product-qty" tabindex="-1"
+                                max="999">
+                            <button type="button" class="increment"
+                                (click)="quantityChange(currentProduct, true)">+</button>
+                        </div>
+                        <span><b>{{ currentProduct.count * currentProduct.price }}</b> грн. </span> 
+                    </div>
+                </div>
+                <div class="product__buttons">
+                    <button class="product__buttons_add">ДОДАТИ В КОШИК</button>
+                    <button class="product__buttons_quick">ШВИДКЕ ЗАМОВЛЕННЯ</button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

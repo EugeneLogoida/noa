@@ -77,8 +77,8 @@
       font-size: 14px;
       line-height: 14px;
       font-weight: 700;
-      &_close{
-        color: #DB2526;
+      &_close {
+        color: #db2526;
       }
       &::before {
         content: "";
@@ -92,17 +92,106 @@
         transform: rotate(-45deg);
         -webkit-transform: rotate(-45deg);
       }
-      &_close::before{
+      &_close::before {
         top: 5px;
-        border-color: #DB2526;
+        border-color: #db2526;
         -webkit-transform: rotate(-225deg);
         transform: rotate(-225deg);
       }
-
     }
-
   }
-  .spacer-xl{
+  .spacer-xl {
     height: 140px;
+  }
+}
+
+.card-title {
+  font-weight: 600;
+  min-height: 3.25em;
+  font-size: 18px;
+  &:hover{
+    color: #2d7d7d;
+    transition: 0.3s all;
+    cursor: pointer;
+  }
+}
+.card-price {
+  font-weight: 600;
+  font-size: 16px;
+}
+.card-text {
+  font-size: 15px;
+  color: #6d6d6d;
+  height: 66px;
+  line-height: 1.5em;
+}
+
+.thumb-input-number {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #181818;
+  font-size: 14px;
+  line-height: 1;
+}
+.thumb-input-number button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: none;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2d2c2c;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.thumb-input-number input {
+  width: 35px;
+  height: 26px;
+  font-weight: 500;
+  color: #2d2c2c;
+  text-align: center;
+  font-size: 16px;
+}
+
+.card-inputs {
+  margin-top: 10px;
+  &_btn {
+    color: #fff;
+    background: #2d7d7d;
+    border: 2px solid #2d7d7d;
+    border-radius: 6px;
+    padding: 10px 15px;
+    transition: 0.3s;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    &:hover {
+      background: #fff;
+      color: #2d7d7d;
+    }
+  }
+}
+.thumb-input-number button:hover {
+  background-color: #2d7d7d;
+  color: #fff;
+}
+.card{
+  margin: 10px 20px;
+  background-color: transparent;
+  border: 0;
+  &:hover{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  
   }
 }

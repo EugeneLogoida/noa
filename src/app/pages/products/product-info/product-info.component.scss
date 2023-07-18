@@ -1,0 +1,151 @@
+.q {
+  ::after {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #2d7d7d;
+    margin: 0 15px 0 10px;
+  }
+}
+.breadcrumb {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  position: relative;
+  left: -10px;
+  a,
+  li {
+    font-size: 13px;
+    color: #2d2c2c;
+  }
+}
+.inside-img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: top;
+  width: 400px;
+  height: 400px;
+}
+
+.product {
+  &__weight {
+    font-size: 15px;
+  }
+  &__title {
+    font-size: 38px;
+    color: #2d2c2c;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  &__description {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+    color: #6d6d6d;
+    font-size: 16px;
+  }
+  &__allergens {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+    color: #6d6d6d;
+    font-size: 16px;
+  }
+  &__count {
+    padding: 30px 0;
+    span{
+        text-align: center;
+        font-size: 24px;
+        color: #2d2c2c;
+    }
+  }
+  &__buttons {
+    
+    button {
+      border-radius: 6px;
+      padding: 18px 30px;
+      transition: 0.3s;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    &_add {
+      color: #fff;
+      background: #2d7d7d;
+      border: 2px solid #2d7d7d;
+      margin-right: 55px;
+      &:hover {
+        background: #fff;
+        color: #2d7d7d;
+      }
+    }
+    &_quick {
+      background: #fff;
+      color: #2d7d7d;
+      border: 2px solid #2d7d7d;
+      &:hover {
+        color: #fff;
+        background: #2d7d7d;
+      }
+    }
+  }
+}
+
+.card-inputs {
+  margin-top: 10px;
+  &_btn {
+    color: #fff;
+    background: #2d7d7d;
+    border: 2px solid #2d7d7d;
+
+    &:hover {
+      background: #fff;
+      color: #2d7d7d;
+    }
+  }
+}
+
+.thumb-input-number {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #181818;
+  font-size: 14px;
+  line-height: 1;
+
+  margin-right: 50px;
+}
+.thumb-input-number button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: none;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2d2c2c;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.thumb-input-number input {
+  width: 35px;
+  height: 26px;
+  font-weight: 500;
+  color: #2d2c2c;
+  text-align: center;
+  font-size: 16px;
+}
+.thumb-input-number button:hover {
+    background-color: #2d7d7d;
+    color: #fff;
+  }

@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ProductsComponent } from './products.component';
 
 
 @NgModule({
   declarations: [
-    ProductInfoComponent
+    ProductInfoComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,

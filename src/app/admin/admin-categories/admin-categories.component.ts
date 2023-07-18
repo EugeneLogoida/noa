@@ -16,7 +16,7 @@ export class AdminCategoriesComponent implements OnInit {
   public editStatus = false;
   public currentCategoryId!: number | string;
 
-  public affiliationCheck = true;
+  public affiliationCheck!:boolean;
 
   constructor(
     private ImageUploadService: ImageUploadService,
@@ -45,7 +45,8 @@ export class AdminCategoriesComponent implements OnInit {
     });
   }
   addCategory(): void {
-    if (this.editStatus) {
+    this.categoriesForm.value.affiliation = this.affiliationCheck;
+    if (this.editStatus) {  
       this.categoriesService
         .update(this.categoriesForm.value, this.currentCategoryId as string)
         .then(() => {
@@ -53,7 +54,7 @@ export class AdminCategoriesComponent implements OnInit {
         });
     } else {
       
-      this.categoriesForm.value.affiliation = this.affiliationCheck;
+      
       this.categoriesService.create(this.categoriesForm.value).then();
       console.log(this.categoriesForm.value);
       
@@ -70,6 +71,7 @@ export class AdminCategoriesComponent implements OnInit {
       imagePath: category.imagePath,
       affiliation: category.affiliation,
     });
+    this.affiliationCheck = category.affiliation;
     this.editStatus = true;
     this.currentCategoryId = category.id as number;
     this.isUploaded = true;

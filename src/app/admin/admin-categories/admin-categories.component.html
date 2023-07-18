@@ -15,13 +15,13 @@
                     <div class="mb-3">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                checked (click)="ch(true)">
+                                [checked]="affiliationCheck" (click)="ch(true)" >
                             <label class="form-check-label" for="flexRadioDefault2" >
                                 Основне меню
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" (click)="ch(false)">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" (click)="ch(false)" [checked]="!affiliationCheck">
                             <label class="form-check-label" for="flexRadioDefault1"  >
                                 Меню Thai Market
                             </label>
@@ -53,15 +53,17 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Path</th>
+                        <th scope="col">Main menu</th>
                         <th scope="col">Image</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let category of adminCategories">
-                        <td>{{ category.id }}</td>
+                        <td>{{ adminCategories.indexOf(category)+1 }}</td>
                         <td>{{ category.name }}</td>
                         <td>{{ category.path }}</td>
+                        <td>{{ category.affiliation }}</td>
                         <td>
                             <img [src]="category.imagePath" alt="" height="50px">
                         </td>

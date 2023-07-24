@@ -1,1 +1,54 @@
-<p>auth-dialog works!</p>
+<div class="form text-center">
+    <div class="close-btn" mat-dialog-close></div>
+
+    <ng-container *ngIf="!register" mat-dialog-content>
+        <div class="d-flex flex-column">
+            <h2>Вхід в кабінет</h2>
+            <form [formGroup]="authGroup" class="d-flex flex-column">
+                <input type="email" formControlName="email" required placeholder="*Ваше ім`я">
+                <input type="password" formControlName="password" required placeholder="*Ваше прізвище">
+                <button (click)="login()" [disabled]="authGroup.invalid" >Увійти в кабінет</button>
+            </form>
+            <div class="d-flex justify-content-between">
+                <a class="forget">Забули пароль?</a>
+                <a class="register" (click)="changeRegisterBool()" >Зареєструватись</a>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="register">
+        <div class="d-flex flex-column" >
+
+
+            <h2>Зареєструватися</h2>
+            <form [formGroup]="registerGroup" class="d-flex flex-column">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text"  formControlName="fName" required placeholder="*Ваше ім`я">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="col-sm-6" formControlName="lName" required placeholder="*Ваше прізвище">
+                    </div>
+                </div>
+                <input type="text" formControlName="number" required placeholder="+380">
+                <input type="email" formControlName="email" required placeholder="*Ваш емейл">
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <input type="password" formControlName="confirmPassword" required placeholder="*Пароль">
+                    </div>
+                    <div class="col-sm-6">
+
+                        <input type="password" formControlName="password" required placeholder="*Повторіть пароль">
+                    </div>
+                </div>
+                <button (click)="registerUser()">Зареєструватись</button>
+            </form>
+            <div>
+                <span class="register">Вже зареєстровані? </span><span class="forget"
+                    (click)="changeRegisterBool()">Увійти</span>
+                
+            </div>
+        </div>
+    </ng-container>
+</div>

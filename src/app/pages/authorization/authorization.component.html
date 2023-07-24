@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="adminAuthForm">
+            <div class=" mt-4">
+                <div class="col-4 m-auto">
+                    <input formControlName="email" name="email" type="email" class="form-control mb-4" id="email"
+                        placeholder="email">
+                    <input formControlName="password" name="password" type="password" class="form-control" id="password"
+                        placeholder="password">
+                </div>
+                
+                <div class="col-4 m-auto">
+                    <button  type="submit" class="card-inputs_btn col-12 m-auto mt-5" [disabled]="adminAuthForm.invalid" (click)="login()">
+                      Login
+                    </button>
+    
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

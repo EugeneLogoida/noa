@@ -1,0 +1,20 @@
+.card-inputs {
+    margin-top: 10px;
+    &_btn {
+      color: #fff;
+      background: #2d7d7d;
+      border: 2px solid #2d7d7d;
+      border-radius: 6px;
+      padding: 10px 15px;
+      transition: 0.3s;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      &:hover {
+        background: #fff;
+        color: #2d7d7d;
+      }
+    }
+  }

@@ -10,6 +10,7 @@ import { ProductsService } from 'src/app/shared/services/products/products.servi
 export class HomeComponent implements OnInit {
 
 
+
   public collapseStatus = true;
   public productsList: Array<IProductResponse> = [];
 
@@ -39,5 +40,7 @@ export class HomeComponent implements OnInit {
   collapse():void{
     this.collapseStatus = !this.collapseStatus
   }
+
+
 
 }

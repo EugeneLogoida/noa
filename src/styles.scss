@@ -1,6 +1,8 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
+
+// @import 'app/shared/styles/_theme-material';
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -33,7 +35,9 @@ $noa-theme: mat.define-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($noa-theme);
+@import url("app/shared/styles/_theme-material.scss");
 @import url("app/shared/styles/_variables.scss");
+
 
 @font-face {
   font-family: "Cera Round Pro";
@@ -103,3 +107,6 @@ li{
       padding-right: 60px;
   }
 }
+
+
+
